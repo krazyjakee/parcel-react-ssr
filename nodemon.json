@@ -1,0 +1,6 @@
+{
+    "ext": "js,jsx",
+    "ignore": ["client/imported.js"],
+    "watch": ["client", "server"],
+    "exec": "npm run build && node dist/server"
+}

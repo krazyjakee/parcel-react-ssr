@@ -12,12 +12,15 @@
   "license": "MIT",
   "repository": "reactivestack/parcel-react-ssr",
   "scripts": {
-    "dev": "npm run generate-imported-component && parcel app/index.html",
+    "dev": "npm run dev:client",
+    "dev:client": "npm run generate-imported-component && parcel client/index.html",
+    "dev:server": "cross-env NODE_ENV=development nodemon",
+    "build:production": "cross-env NODE_ENV=production npm run build",
     "build": "rimraf dist && npm run generate-imported-component && npm run build-client && npm run build-server",
-    "build-client": "cross-env BABEL_ENV=client parcel build app/index.html -d dist/client --public-url /dist",
+    "build-client": "cross-env BABEL_ENV=client parcel build client/index.html -d dist/client --public-url /dist",
     "build-server": "cross-env BABEL_ENV=server parcel build server/index.js -d dist/server --public-url /dist --target=node6",
-    "generate-imported-component": "imported-components app app/imported.js",
-    "start": "node dist/server"
+    "generate-imported-component": "imported-components client client/imported.js",
+    "start": "cross-env NODE_ENV=production node dist/server"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
