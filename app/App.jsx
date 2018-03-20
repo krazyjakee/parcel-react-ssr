@@ -10,6 +10,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import HelloWorld from './HelloWorld';
 
 const HelloWorld2 = importedComponent(() => import('./HelloWorld2'));
+const HelloWorld3 = importedComponent(() => import('./HelloWorld3'));
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HelloWorld} />
         <Route exact path="/codeSplit" component={HelloWorld2} />
+        <Route exact path="/asyncState" component={HelloWorld3} />
         <Redirect to="/" />
       </Switch>
     </div>

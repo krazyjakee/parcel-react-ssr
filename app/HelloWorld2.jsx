@@ -17,9 +17,11 @@ export default class Nyan extends Component {
         </Helmet>
         <h1 className="hello-world">Hello world 2!</h1>
         <p style={{ textAlign: 'center' }}>
-                This is a code-split component.
+          This is a code-split component.
           <br />
           <Link to="/">Click here</Link> to see an ordinary component.
+          <br />
+          <Link to="/asyncState">Click here</Link> to see a component with an asynchronous initial state.
         </p>
         <div className="wrapper">
           <div className="rainbow">

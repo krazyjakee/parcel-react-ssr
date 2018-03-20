@@ -16,6 +16,8 @@ export default function HelloWorld() {
       This is an ordinary react component.
         <br />
         <Link to="/codeSplit">Click here</Link> to see a code-split component.
+        <br />
+        <Link to="/asyncState">Click here</Link> to see a component with an asynchronous initial state.
       </p>
     </div>);
 }
